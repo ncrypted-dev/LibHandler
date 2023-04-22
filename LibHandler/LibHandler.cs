@@ -1,6 +1,6 @@
 ﻿using LibHandler.Models;
 using LibHandler.Util;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace LibHandler
 {
@@ -49,9 +49,8 @@ namespace LibHandler
         {
             List<string> ids = GetIDs(request);
             string jsonData = GetJSONData(ids);
-            return JsonConvert.DeserializeObject<List<Book>>(jsonData) ?? new List<Book>();
+            return JsonSerializer.Deserialize<List<Book>>(jsonData) ?? new List<Book>();
         }
-
         /// <summary>
         /// Returns the current mirror.
         /// </summary>

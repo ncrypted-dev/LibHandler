@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Linq;
-using System.Text.Json;
+﻿using System.Text.Json;
 using System.Net.NetworkInformation;
 using System.Reflection;
 
@@ -35,7 +33,7 @@ namespace LibHandler.Util
 
             //string config = File.ReadAllText(DataHandler.MIRROR_CONFIG_PATH);
             string config = reader.ReadToEnd();
-            Mirrors = JsonConvert.DeserializeObject<List<Mirror>>(config) ?? new List<Mirror>();
+            Mirrors = JsonSerializer.Deserialize<List<Mirror>>(config) ?? new List<Mirror>();
 
             MainMirror = new Mirror();
             MainMirror = GetMainMirror();
