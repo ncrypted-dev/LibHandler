@@ -55,15 +55,15 @@ namespace LibHandler
         /// Returns the current mirror.
         /// </summary>
         /// <returns></returns>
-        public static Mirror GetCurrentMirror()
-            => MirrorHandler.MainMirror;
+        public static Mirror GetCurrentMirror(MirrorType type)
+            => MirrorHandler.GetMainMirror(type);
 
         /// <summary>
         /// Sets the current mirror.
         /// </summary>
         /// <param name="mirror"></param>
         public static void SetCurrentMirror(Mirror mirror)
-            => MirrorHandler.MainMirror = mirror;
+            => MirrorHandler.SetMainMirror(mirror);
 
         /// <summary>
         /// Generates the search request url
@@ -73,7 +73,7 @@ namespace LibHandler
         /// <param name="results">Amount of results (25, 50, 100)</param>
         /// <returns></returns>
         public static string GetRequestFormat(SearchField field, string value, int results) =>
-            $"https://libgen.rs/search.php?req={value}&res={results}&column={field.ToString().ToLower()}";
+            $"{MirrorHandler.GetMainMirror(MirrorType.SearchMirror).FullUrl}/search.php?req={value}&res={results}&column={field.ToString().ToLower()}";
 
     }
 
