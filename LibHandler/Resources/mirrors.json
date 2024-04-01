@@ -1,0 +1,29 @@
+﻿[
+  {
+    "Url": "libgen.is",
+    "FullUrl": "https://libgen.is",
+    "MirrorType": "SearchMirror"
+  },
+  {
+    "Url": "libgen.rs",
+    "FullUrl": "https://libgen.rs",
+    "MirrorType": "SearchMirror"
+  },
+  {
+    "Url": "libgen.st",
+    "FullUrl": "https://libgen.st",
+    "MirrorType": "SearchMirror"
+  },
+  {
+    "Url": "library.lol",
+    "FullUrl": "http://library.lol",
+    "MirrorType": "DownloadMirror",
+    "Path": "/main/"
+  },
+  {
+    "Url": "libgen.rocks",
+    "FullUrl": "https://libgen.rocks",
+    "MirrorType": "DownloadMirror",
+    "Path": "/ads.php?md5="
+  }
+]
